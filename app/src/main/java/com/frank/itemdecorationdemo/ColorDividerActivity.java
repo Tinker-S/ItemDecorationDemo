@@ -12,6 +12,7 @@ public class ColorDividerActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     List<String> data;
     TestAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +29,8 @@ public class ColorDividerActivity extends AppCompatActivity {
 
     private void initDatas() {
         data = new ArrayList<>();
-        for (int i = 0; i < 56;i++) {
-            data.add(i+" test ");
+        for (int i = 0; i < 56; i++) {
+            data.add(i + " test ");
         }
     }
 }

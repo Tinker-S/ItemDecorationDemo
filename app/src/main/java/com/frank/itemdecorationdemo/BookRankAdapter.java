@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -18,12 +17,13 @@ public class BookRankAdapter extends RecyclerView.Adapter<BookRankAdapter.TestHo
 
     List<String> data;
     int[] mIconResouces;
-    public BookRankAdapter(List<String> data,int[] ids) {
+
+    public BookRankAdapter(List<String> data, int[] ids) {
         this.data = data;
         this.mIconResouces = ids;
     }
 
-    public void setData(List<String> data,int[] ids) {
+    public void setData(List<String> data, int[] ids) {
         this.data = data;
         mIconResouces = ids;
         notifyDataSetChanged();
@@ -31,18 +31,18 @@ public class BookRankAdapter extends RecyclerView.Adapter<BookRankAdapter.TestHo
 
     @Override
     public TestHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_ranklist_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_ranklist_item, parent, false);
         TestHolder holder = new TestHolder(view);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(TestHolder holder, int position) {
-        if (data != null && data.size() > 0 ) {
+        if (data != null && data.size() > 0) {
             String text = data.get(position);
 
             String[] infos = text.split("-");
-            holder.tvOrder.setText(position+"");
+            holder.tvOrder.setText(position + "");
             holder.tvTitle.setText(infos[0]);
             holder.tvPrice.setText(infos[1]);
 
@@ -56,11 +56,12 @@ public class BookRankAdapter extends RecyclerView.Adapter<BookRankAdapter.TestHo
         return data == null ? 0 : data.size();
     }
 
-    static class TestHolder extends  RecyclerView.ViewHolder{
+    static class TestHolder extends RecyclerView.ViewHolder {
         public TextView tvOrder;
         public TextView tvTitle;
         public TextView tvPrice;
         public ImageView ivCover;
+
         public TestHolder(View itemView) {
             super(itemView);
 

@@ -14,8 +14,8 @@ import android.view.View;
 
 public class TestItemDecoration extends RecyclerView.ItemDecoration {
 
-    private Paint mPaint;
     Bitmap bitmap;
+    private Paint mPaint;
 
 
     public TestItemDecoration() {
@@ -50,13 +50,13 @@ public class TestItemDecoration extends RecyclerView.ItemDecoration {
 
         int childCount = parent.getChildCount();
 
-        for ( int i = 0; i < childCount; i++ ) {
+        for (int i = 0; i < childCount; i++) {
             View view = parent.getChildAt(i);
             int top = view.getTop();
             int bottom = view.getBottom();
-            c.drawLine(10,top,10,top + (bottom - top) / 2 - 4,mPaint);
-            c.drawCircle(10,top + (bottom - top) / 2,3,mPaint);
-            c.drawLine(10,top + (bottom - top) / 2 + 4,10,bottom+4,mPaint);
+            c.drawLine(10, top, 10, top + (bottom - top) / 2 - 4, mPaint);
+            c.drawCircle(10, top + (bottom - top) / 2, 3, mPaint);
+            c.drawLine(10, top + (bottom - top) / 2 + 4, 10, bottom + 4, mPaint);
         }
     }
 }

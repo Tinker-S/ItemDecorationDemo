@@ -12,6 +12,7 @@ public class BookRankActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     List<String> data;
     BookRankAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,14 +21,14 @@ public class BookRankActivity extends AppCompatActivity {
 
 
         initDatas();
-        int resouces[] = new int[] {R.drawable.book_renmin,R.drawable.book_huochetou,
-            R.drawable.book_jieyouzahuodian,R.drawable.book_tensoflow,R.drawable.book_wangyangming
-            ,R.drawable.book_renmin,R.drawable.book_huochetou,
-                R.drawable.book_jieyouzahuodian,R.drawable.book_tensoflow,R.drawable.book_wangyangming
-            ,R.drawable.book_renmin,R.drawable.book_huochetou,
-                R.drawable.book_jieyouzahuodian,R.drawable.book_tensoflow,R.drawable.book_wangyangming
+        int resouces[] = new int[]{R.drawable.book_renmin, R.drawable.book_huochetou,
+                R.drawable.book_jieyouzahuodian, R.drawable.book_tensoflow, R.drawable.book_wangyangming
+                , R.drawable.book_renmin, R.drawable.book_huochetou,
+                R.drawable.book_jieyouzahuodian, R.drawable.book_tensoflow, R.drawable.book_wangyangming
+                , R.drawable.book_renmin, R.drawable.book_huochetou,
+                R.drawable.book_jieyouzahuodian, R.drawable.book_tensoflow, R.drawable.book_wangyangming
         };
-        mAdapter = new BookRankAdapter(data,resouces);
+        mAdapter = new BookRankAdapter(data, resouces);
         mRecyclerView.setAdapter(mAdapter);
         LinearLayoutManager layoutmanager = new LinearLayoutManager(this);
         layoutmanager.setOrientation(LinearLayoutManager.VERTICAL);

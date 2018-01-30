@@ -1,8 +1,8 @@
 package com.frank.itemdecorationdemo;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mBtnDivider4;
     Button mBtnDivider5;
     TextView mTv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,34 +42,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-        switch (view.getId())
-        {
+        switch (view.getId()) {
             case R.id.btn_divider:
-                Intent intent = new Intent(MainActivity.this,DividerActivity.class);
+                Intent intent = new Intent(MainActivity.this, DividerActivity.class);
                 startActivity(intent);
 
                 break;
             case R.id.btn_divider1:
-                Intent intent1 = new Intent(MainActivity.this,ColorDividerActivity.class);
+                Intent intent1 = new Intent(MainActivity.this, ColorDividerActivity.class);
                 startActivity(intent1);
 
                 break;
             case R.id.btn_divider2:
-                Intent intent2 = new Intent(MainActivity.this,TimelineActivity.class);
+                Intent intent2 = new Intent(MainActivity.this, TimelineActivity.class);
                 startActivity(intent2);
 
                 break;
             case R.id.btn_divider3:
-                Intent intent3 = new Intent(MainActivity.this,BookRankActivity.class);
+                Intent intent3 = new Intent(MainActivity.this, BookRankActivity.class);
                 startActivity(intent3);
 
                 break;
             case R.id.btn_divider4:
-                Intent intent4 = new Intent(MainActivity.this,HeaderActivity.class);
+                Intent intent4 = new Intent(MainActivity.this, HeaderActivity.class);
                 startActivity(intent4);
                 break;
             case R.id.btn_divider5:
-                Intent intent5 = new Intent(MainActivity.this,StickyHeaderActivity.class);
+                Intent intent5 = new Intent(MainActivity.this, StickyHeaderActivity.class);
                 startActivity(intent5);
 
                 break;

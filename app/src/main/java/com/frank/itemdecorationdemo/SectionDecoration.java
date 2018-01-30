@@ -28,13 +28,13 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
 
     private float mTextOffsetX;
 
-    public SectionDecoration( Context context,GroupInfoCallback callback) {
+    public SectionDecoration(Context context, GroupInfoCallback callback) {
         this.mCallback = callback;
         mDividerHeight = context.getResources().getDimensionPixelOffset(R.dimen.header_divider_height);
         mHeaderHeight = context.getResources().getDimensionPixelOffset(R.dimen.header_height);
         mTextSize = context.getResources().getDimensionPixelOffset(R.dimen.header_textsize);
 
-        mHeaderHeight = (int) Math.max(mHeaderHeight,mTextSize);
+        mHeaderHeight = (int) Math.max(mHeaderHeight, mTextSize);
 
         mTextPaint = new TextPaint();
         mTextPaint.setColor(Color.BLACK);
@@ -53,11 +53,11 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
 
         int position = parent.getChildAdapterPosition(view);
 
-        if ( mCallback != null ) {
+        if (mCallback != null) {
             GroupInfo groupInfo = mCallback.getGroupInfo(position);
 
             //如果是组内的第一个则将间距撑开为一个Header的高度，或者就是普通的分割线高度
-            if ( groupInfo != null && groupInfo.isFirstViewInGroup() ) {
+            if (groupInfo != null && groupInfo.isFirstViewInGroup()) {
                 outRect.top = mHeaderHeight;
             } else {
                 outRect.top = mDividerHeight;
@@ -71,26 +71,26 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
 
         int childCount = parent.getChildCount();
 
-        for ( int i = 0; i < childCount; i++ ) {
+        for (int i = 0; i < childCount; i++) {
             View view = parent.getChildAt(i);
 
             int index = parent.getChildAdapterPosition(view);
 
-            if ( mCallback != null ) {
+            if (mCallback != null) {
                 GroupInfo groupinfo = mCallback.getGroupInfo(index);
                 //只有组内的第一个ItemView之上才绘制
-                if ( groupinfo.isFirstViewInGroup() ) {
+                if (groupinfo.isFirstViewInGroup()) {
                     int left = parent.getPaddingLeft();
                     int top = view.getTop() - mHeaderHeight;
                     int right = parent.getWidth() - parent.getPaddingRight();
                     int bottom = view.getTop();
                     //绘制Header
-                    c.drawRect(left,top,right,bottom,mPaint);
+                    c.drawRect(left, top, right, bottom, mPaint);
 
-                    float titleX =  left + mTextOffsetX;
-                    float titleY =  bottom - mFontMetrics.descent;
+                    float titleX = left + mTextOffsetX;
+                    float titleY = bottom - mFontMetrics.descent;
                     //绘制Title
-                    c.drawText(groupinfo.getTitle(),titleX,titleY,mTextPaint);
+                    c.drawText(groupinfo.getTitle(), titleX, titleY, mTextPaint);
                 }
             }
         }

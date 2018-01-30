@@ -34,8 +34,8 @@ public class TimelineItemDecoration extends RecyclerView.ItemDecoration {
         mOffsetLeft = context.getResources().getDimension(R.dimen.timeline_item_offset_left);
         mNodeRadius = context.getResources().getDimension(R.dimen.timeline_item_node_radius);
 
-        mIcon = BitmapFactory.decodeResource(context.getResources(),R.drawable.clock);
-        mIcon = Bitmap.createScaledBitmap(mIcon,(int)mNodeRadius * 2,(int)mNodeRadius * 2,false);
+        mIcon = BitmapFactory.decodeResource(context.getResources(), R.drawable.clock);
+        mIcon = Bitmap.createScaledBitmap(mIcon, (int) mNodeRadius * 2, (int) mNodeRadius * 2, false);
 
     }
 
@@ -44,7 +44,7 @@ public class TimelineItemDecoration extends RecyclerView.ItemDecoration {
         super.getItemOffsets(outRect, view, parent, state);
 
 //        //第一个ItemView不需要在上面绘制分割线
-        if (parent.getChildAdapterPosition(view) != 0){
+        if (parent.getChildAdapterPosition(view) != 0) {
             //这里直接硬编码为1px
             outRect.top = 1;
             mOffsetTop = 1;
@@ -59,14 +59,14 @@ public class TimelineItemDecoration extends RecyclerView.ItemDecoration {
 
         int childCount = parent.getChildCount();
 
-        for ( int i = 0; i < childCount; i++ ) {
+        for (int i = 0; i < childCount; i++) {
             View view = parent.getChildAt(i);
 
             int index = parent.getChildAdapterPosition(view);
 
             float dividerTop = view.getTop() - mOffsetTop;
             //第一个ItemView 没有向上方向的间隔
-            if ( index == 0 ) {
+            if (index == 0) {
                 dividerTop = view.getTop();
             }
 
@@ -83,7 +83,7 @@ public class TimelineItemDecoration extends RecyclerView.ItemDecoration {
             float upLineBottomY = centerY - mNodeRadius;
 
             //绘制上半部轴线
-            c.drawLine(upLineTopX,upLineTopY,upLineBottomX,upLineBottomY,mPaint);
+            c.drawLine(upLineTopX, upLineTopY, upLineBottomX, upLineBottomY, mPaint);
 
 //            //绘制时间轴结点
 //            mPaint.setStyle(Paint.Style.STROKE);
@@ -91,7 +91,7 @@ public class TimelineItemDecoration extends RecyclerView.ItemDecoration {
 ////            c.drawCircle(centerX,centerY,mNodeRadius,mPaint);
 //            mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
 
-            c.drawBitmap(mIcon,centerX - mNodeRadius,centerY - mNodeRadius,mPaint);
+            c.drawBitmap(mIcon, centerX - mNodeRadius, centerY - mNodeRadius, mPaint);
 
             float downLineTopX = centerX;
             float downLineTopY = centerY + mNodeRadius;
@@ -99,7 +99,7 @@ public class TimelineItemDecoration extends RecyclerView.ItemDecoration {
             float downLineBottomY = dividerBottom;
 
             //绘制上半部轴线
-            c.drawLine(downLineTopX,downLineTopY,downLineBottomX,downLineBottomY,mPaint);
+            c.drawLine(downLineTopX, downLineTopY, downLineBottomX, downLineBottomY, mPaint);
         }
     }
 }

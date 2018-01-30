@@ -1,7 +1,7 @@
 package com.frank.itemdecorationdemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -12,6 +12,7 @@ public class DividerActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     List<String> data;
     TestAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +29,8 @@ public class DividerActivity extends AppCompatActivity {
 
     private void initDatas() {
         data = new ArrayList<>();
-        for (int i = 0; i < 56;i++) {
-            data.add(i+" test ");
+        for (int i = 0; i < 56; i++) {
+            data.add(i + " test ");
         }
     }
 }

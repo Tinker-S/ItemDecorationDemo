@@ -15,7 +15,7 @@ public class TestDividerItemDecoration extends RecyclerView.ItemDecoration {
         super.getItemOffsets(outRect, view, parent, state);
 
 //        //如果不是第一个，则进行位移
-        if (parent.getChildAdapterPosition(view) != 0){
+        if (parent.getChildAdapterPosition(view) != 0) {
             //这里直接硬编码为1px
             outRect.top = 1;
         }

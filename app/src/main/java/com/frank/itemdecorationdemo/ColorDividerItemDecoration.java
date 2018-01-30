@@ -28,7 +28,7 @@ public class ColorDividerItemDecoration extends RecyclerView.ItemDecoration {
         super.getItemOffsets(outRect, view, parent, state);
 
 //        //第一个ItemView不需要在上面绘制分割线
-        if (parent.getChildAdapterPosition(view) != 0){
+        if (parent.getChildAdapterPosition(view) != 0) {
             //这里直接硬编码为1px
             outRect.top = 1;
             mDividerHeight = 1;
@@ -41,12 +41,12 @@ public class ColorDividerItemDecoration extends RecyclerView.ItemDecoration {
 
         int childCount = parent.getChildCount();
 
-        for ( int i = 0; i < childCount; i++ ) {
+        for (int i = 0; i < childCount; i++) {
             View view = parent.getChildAt(i);
 
             int index = parent.getChildAdapterPosition(view);
             //第一个ItemView不需要绘制
-            if ( index == 0 ) {
+            if (index == 0) {
                 continue;
             }
 
@@ -55,7 +55,7 @@ public class ColorDividerItemDecoration extends RecyclerView.ItemDecoration {
             float dividerBottom = view.getTop();
             float dividerRight = parent.getWidth() - parent.getPaddingRight();
 
-            c.drawRect(dividerLeft,dividerTop,dividerRight,dividerBottom,mPaint);
+            c.drawRect(dividerLeft, dividerTop, dividerRight, dividerBottom, mPaint);
         }
     }
 }

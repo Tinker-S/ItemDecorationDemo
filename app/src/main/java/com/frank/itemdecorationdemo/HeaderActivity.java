@@ -12,6 +12,7 @@ public class HeaderActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     List<String> data;
     TestAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,22 +33,24 @@ public class HeaderActivity extends AppCompatActivity {
                 /**
                  * 分组逻辑，这里为了测试每5个数据为一组。大家可以在实际开发中
                  * 替换为真正的需求逻辑
-                */
+                 */
                 int groupId = position / 5;
                 int index = position % 5;
-                GroupInfo groupInfo = new GroupInfo(groupId,groupId+"");
+                GroupInfo groupInfo = new GroupInfo(groupId, groupId + "");
                 groupInfo.setPosition(index);
                 return groupInfo;
             }
         };
-        mRecyclerView.addItemDecoration(new SectionDecoration(this,callback));
+        mRecyclerView.addItemDecoration(new SectionDecoration(this, callback));
     }
 
-    /**初始化测试数据*/
+    /**
+     * 初始化测试数据
+     */
     private void initDatas() {
         data = new ArrayList<>();
-        for (int i = 0; i < 56;i++) {
-            data.add(i+" test ");
+        for (int i = 0; i < 56; i++) {
+            data.add(i + " test ");
         }
     }
 }

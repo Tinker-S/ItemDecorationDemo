@@ -36,11 +36,11 @@ public class GroupInfo {
         this.mTitle = title;
     }
 
-    public boolean isFirstViewInGroup () {
+    public boolean isFirstViewInGroup() {
         return position == 0;
     }
 
-    public boolean isLastViewInGroup () {
+    public boolean isLastViewInGroup() {
         return position == mGroupLength - 1 && position >= 0;
     }
 
